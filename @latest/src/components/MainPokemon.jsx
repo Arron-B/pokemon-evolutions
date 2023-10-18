@@ -1,5 +1,4 @@
 import React, { useEffect, useState} from 'react'
-import { Image, Button, Form, Card, FloatingLabel} from 'react-bootstrap'
 import Evolutions from './Evolutions'
 
 function MainPokemon () {
@@ -29,36 +28,34 @@ if(isLoaded === true) {
 return (
     <>
     <section className='main'>
-    <Form className='form' onSubmit={(event) => {
+    <form className='form'
+        onSubmit={(event) => {
             event.preventDefault()
             setSearchComplete(!searchComplete)
         }}>
       <input
-        className='text-center'
         type="search"
         aria-describedby="pokemonSearchBlock"
-        placeholder="Search for a pokemon" onChange={(e) => {setSearch(e.target.value)}}
-      />
-      <Button className='mt-1 mb-1 p-1' onClick={() => {
+        placeholder="Search for a pokemon" onChange={(e) => {setSearch(e.target.value)}}/>
+      <button className='mt-1 mb-1 p-1' onClick={() => {
         setSearchComplete(!searchComplete)
         }
-        }>Search</Button>{''}
-
-        </Form>
-        <Card className='d-flex align-items-center border-0' style={{ width: '80%'}}>
-        <Card.Title>
+        }>Search</button>{''}
+        </form>
+        <div className='pokemon-div' style={{ width: '80%'}}>
+        <h2 style={{ fontSize: '2rem' }}>
             { capitaliseFirstLetter(pokemon.name) }
-        </Card.Title>
-        <Image className='image' src={ pokemon.sprites.front_default }/>
-            <Card.Title>Types:</Card.Title>
+        </h2>
+        <img className='image h-80 aspect-1' src={ pokemon.sprites.front_default }/>
+            <h2>Types:</h2>
         {pokemon.types.map((type, i) => {
-            return <Card.Text key={i}>
+            return <p key={i}>
                 { type.type.name }
-            </Card.Text>
+            </p>
         })}
-        </Card>
+        </div>
     </section>
-    <Evolutions pokemon={pokemon} bothLoaded={bothLoaded} setBothLoaded={setBothLoaded} capitaliseFirstLetter={capitaliseFirstLetter}/>
+    <Evolutions pokemon={pokemon} capitaliseFirstLetter={capitaliseFirstLetter}/>
     </>
     ) }
     else {return <p>Loading...</p>}

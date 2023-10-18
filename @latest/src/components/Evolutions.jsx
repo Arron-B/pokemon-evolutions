@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Image} from 'react-bootstrap'
-function Evolutions ({pokemon, capitaliseFirstLetter, bothLoaded, setBothLoaded}) {
+function Evolutions ({pokemon, capitaliseFirstLetter}) {
 
     const [evolutionChain, setEvolutionChain] = useState([])
     const [noEvolutions, setNoEvolutions] = useState('')
@@ -70,7 +69,7 @@ function Evolutions ({pokemon, capitaliseFirstLetter, bothLoaded, setBothLoaded}
         {evolutionChain.map((evolution) => {
             return (<div key={evolution.name} className='evolution'>
                 <h2>{evolution.name}</h2>
-                <Image className='image-evolution' src={ evolution.img }/>
+                <img className='image-evolution' src={ evolution.img }/>
                 <div className="types-container">
                     <p>Types:</p>{evolution.types.map((type, i) => {
                         return <p key={`${evolution.name}${i}`}>

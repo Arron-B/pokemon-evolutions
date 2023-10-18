@@ -21,7 +21,6 @@ html, body {
     grid-column: 1 / 3;
     color: blue;
     margin: auto;
-    
 }
 
 .main {
@@ -37,11 +36,18 @@ html, body {
     align-items: center;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+}
 
+.pokemon-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 button {
-    height: 2rem;
+    height: 25%;
+    width: 40%;
+    font-size: large;
 }
 
 .evolutions-div{
@@ -69,7 +75,11 @@ button {
 }
 
 .evolution h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.5rem;
 }
 
 .image {
@@ -80,15 +90,16 @@ button {
 
 .image-evolution {
     width: 100%;
-    border-radius: 1rem;
 }
 
 .form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 0;
-    height: 4rem;
+    justify-content: center;
+    height: 8rem;
+    width: 20rem;
+    box-sizing: border-box;
 }
 
 .form-floating {
@@ -100,6 +111,10 @@ input {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    font-size: 1.8rem;
 }
 
 .types-container {
@@ -112,53 +127,67 @@ input {
     margin-right: 0.2rem;
 }
 
-#floatingInput {
-    height: 2rem;
-}
-
 .floating-label{
     text-align: center;
 }
 
-@media (min-width:280px) and (max-width: 319px) { /* galaxy fold type phones */ 
+@media (min-width:280px) and (max-width: 960px) { /* galaxy fold type phones */ 
     html, body {
         font-size: 10px;
     }
+    #root {
+        display: flex;
+        flex-direction: column;
+    }
+    .main {
+        border: none;
+    }
+    .evolutions-div {
+        border: none;
+        overflow-y: scroll;
+        padding-top: 4rem;
+    }
+
 }
-@media (max-width:480px) { /* smartphones, iPhone, portrait 480x320 phones */ 
+@media (min-width:320px) { /* smartphones, iPhone, portrait 480x320 phones */ 
     html, body {
         font-size: 11px;
     }
-    
 }
-@media (max-width:640px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
     html, body {
         font-size: 12px;
     }
  }
-@media (max-width:960px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+@media (min-width:641px) and (max-width: 960px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
     html, body {
     font-size: 14px;
 }
-#root {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    height: 100dvh;
-    padding-bottom: 1.3rem;
+.main img {
+    width: 15rem;
+    aspect-ratio: 1;
 }
-
+.evolution {
+    height: 10rem;
 }
-@media (max-width:1024px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+.evolutions-div {
+    overflow-y: scroll;
+}
+    
+}
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
     html, body {
         font-size: 10px;
     }
+    #explanation-link {
+        right: 0.5rem;
+    }
 }
-@media (max-width:1280px) {/* big landscape tablets, laptops, and desktops */
+@media (min-width:1025px) {/* big landscape tablets, laptops, and desktops */
     html, body {
         font-size: 11px;
 } }
-@media (max-width:3839px) {/* hi-res laptops and desktops */
+@media (min-width:1281px) {/* hi-res laptops and desktops */
     html, body {
         font-size: 16px;
 } }
