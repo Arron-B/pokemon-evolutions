@@ -1,0 +1,168 @@
+#root {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    grid-template-rows: 8rem min-content;
+    grid-gap: 1rem;
+    box-sizing: border-box;
+    margin: 1rem;
+    padding: 0;
+    max-height: 100vh;
+}
+
+html, body {
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    box-sizing: border-box;
+    overflow-y:hidden;
+}
+
+.header {
+    grid-column: 1 / 3;
+    color: blue;
+    margin: auto;
+    
+}
+
+.main {
+    border: solid;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+}
+
+button {
+    height: 2rem;
+}
+
+.evolutions-div{
+    border: solid;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-around;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.evolution{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.evolution h2 {
+    font-size: 1.2rem;
+}
+
+.image {
+    width: 70%;
+    border: solid;
+    border-radius: 2rem;
+}
+
+.image-evolution {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+    height: 4rem;
+}
+
+.form-floating {
+    border: solid;
+    height: 2rem;
+}
+
+input {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.types-container {
+    width: 70%;
+    display: flex;
+    justify-content: start;
+}
+
+.types-container p {
+    margin-right: 0.2rem;
+}
+
+#floatingInput {
+    height: 2rem;
+}
+
+.floating-label{
+    text-align: center;
+}
+
+@media (min-width:280px) and (max-width: 319px) { /* galaxy fold type phones */ 
+    html, body {
+        font-size: 10px;
+    }
+}
+@media (max-width:480px) { /* smartphones, iPhone, portrait 480x320 phones */ 
+    html, body {
+        font-size: 11px;
+    }
+    
+}
+@media (max-width:640px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    html, body {
+        font-size: 12px;
+    }
+ }
+@media (max-width:960px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+    html, body {
+    font-size: 14px;
+}
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+    padding-bottom: 1.3rem;
+}
+
+}
+@media (max-width:1024px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    html, body {
+        font-size: 10px;
+    }
+}
+@media (max-width:1280px) {/* big landscape tablets, laptops, and desktops */
+    html, body {
+        font-size: 11px;
+} }
+@media (max-width:3839px) {/* hi-res laptops and desktops */
+    html, body {
+        font-size: 16px;
+} }
+@media (min-width:3840px) { /* 4k */
+    html, body {
+        font-size: 30px;
+} }
